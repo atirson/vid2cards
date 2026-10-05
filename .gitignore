@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+
+# Secrets / environment
+.env
+.env.*
+
+# Runtime data and generated output (not source)
+data/
+output/
+logs/

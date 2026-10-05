@@ -1,0 +1,36 @@
+# Vid2Cards configuration
+
+[playlists]
+urls = ["https://youtube.com/playlist?list=PLQqvaUfldLWI"]
+cookies_file = ""  # optional, only needed if the playlist is private
+
+[limits]
+videos_per_run = 5
+max_retries = 3
+max_chars_per_chunk = 20000
+
+[whisper]
+gpu_model = "large-v3-turbo"
+gpu_compute_type = "int8_float16"
+cpu_fallback_model = "small"
+cpu_compute_type = "int8"
+
+[llm]
+model = "qwen3:14b"
+alternative_model = "qwen3:30b-a3b"
+num_ctx = 16384
+temperature = 0.3
+prompt_version = "v1"
+
+[dedup]
+min_similarity = 90  # rapidfuzz, 0-100
+
+[ankiconnect]
+enabled = true
+url = "http://127.0.0.1:8765"
+sync_after_export = true
+
+[folders]
+data = "data"
+output = "output"
+logs = "logs"

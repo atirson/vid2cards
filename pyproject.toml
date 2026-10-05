@@ -1,0 +1,24 @@
+[project]
+name = "vid2cards"
+version = "0.1.0"
+description = "YouTube playlist -> Anki flashcards, with local models"
+requires-python = ">=3.11"
+dependencies = [
+    "faster-whisper>=1.0.3",
+    "yt-dlp>=2024.8.6",
+    "ollama>=0.3.3",
+    "genanki>=0.13.1",
+    "pydantic>=2.8",
+    "rapidfuzz>=3.9",
+    "tomli-w>=1.0; python_version < '3.11'",
+]
+
+[project.scripts]
+vid2cards = "vid2cards.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["vid2cards*"]
