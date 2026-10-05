@@ -1,0 +1,10 @@
+[Unit]
+Description=Runs Vid2Cards once a day
+
+[Timer]
+OnCalendar=*-*-* 03:00:00
+Persistent=true
+RandomizedDelaySec=5min
+
+[Install]
+WantedBy=timers.target

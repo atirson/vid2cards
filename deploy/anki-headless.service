@@ -1,0 +1,14 @@
+[Unit]
+Description=Headless Anki Desktop (with AnkiConnect) for Vid2Cards
+After=network-online.target
+
+[Service]
+Type=simple
+User=atirson
+Environment=HOME=/home/atirson
+ExecStart=/usr/bin/xvfb-run -a /usr/local/bin/anki -p "User 1" -l en
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

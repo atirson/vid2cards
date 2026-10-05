@@ -1,0 +1,13 @@
+[Unit]
+Description=Vid2Cards - syncs playlist, transcribes, and generates flashcards
+After=network-online.target ollama.service anki-headless.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=atirson
+WorkingDirectory=/home/atirson/projects/vid2cards
+ExecStart=/home/atirson/projects/vid2cards/.venv/bin/python3 -m vid2cards.cli run
+Nice=10
+IOSchedulingClass=idle
+TimeoutStartSec=0
