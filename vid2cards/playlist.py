@@ -30,7 +30,7 @@ def extract_id(url_or_id: str) -> str:
 
 
 def _base_cmd(cookies_file: str = "") -> list[str]:
-    cmd = ["yt-dlp"]
+    cmd = ["yt-dlp", "--js-runtimes", "node"]
     if cookies_file:
         cmd += ["--cookies", cookies_file]
     return cmd
